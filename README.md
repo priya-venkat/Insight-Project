@@ -5,7 +5,7 @@
 [linkedin] (https://linkedin.com/in/priya26)
 
 
-Customer Service is a huge part of the success equation of any business, and small companies loose out on this game becuse they do not have the human resources to provide adequate customer service.
+Customer Service is a huge part of the success equation of any business, and small companies lose out on this game because they do not have the human resources to provide adequate customer service.
 
 So, when the company I was consulting for, whom we'll call Z-Star, came to me and said we have a user manual and an FAQ, but nobody ever reads the manual, I decided to help them to automate their customer service.
 
@@ -25,10 +25,10 @@ First, I had to build a Dictionary of relations and entities that generalizes we
 
 I started with a set of paraphrased question pairs from Wikianswers. I used Natural Language Processing (CoreNLP) to tokenize and tag each word with a part of speech label. Then, I used string matching and boostrapped a seed vocabulary to extract equivalent relations and entities. 
 
-One thing to note here is that the wikianswers corpus is crowdsourced, so there's a lot of noise which can lead to incorrect relations being learned. To filter out phrases that are less likely to be equivalent, I trained a multilayer preceptron network that assigns higher scores to phrases that are more likely to be equivalent. (like these)
+One thing to note here is that the wikianswers corpus is crowdsourced, so there's a lot of noise which can lead to incorrect relations being learned. To filter out phrases that are less likely to be equivalent, I trained a multilayer perceptron network that assigns higher scores to phrases that are more likely to be equivalent. (like these)
 
 
-In order to test this model, I used the Dialogue learning dataset from Facebook AI Research (FAIR) bAbi project.
+In order to test this model, I used the Dialogue learning dataset from Facebook AI Research (FAIR) bAbI project.
 
 As you can see, the Association model was able to extract the relation and entity phrases and match it against closely related concepts.
 
