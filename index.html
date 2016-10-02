@@ -38,7 +38,11 @@
           <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
         </div>
 
-        <p><a href="https://docs.google.com/presentation/d/1RnTWS0wZxZXPoIvlczI_Ofs1T3tQjxfbWgfcx6R-9Hs/embed?start=false&amp;loop=false&amp;delayms=3000">Slides</a>         <a href="https://github.com/priya-venkat">github</a>            <a href="https://linkedin.com/in/priya26">linkedin</a></p>
+        <p><a href="https://docs.google.com/presentation/d/1w8tlsPJ5ISYcu4zeTcWbimKW5Amcif4duLac96DlzPo/embed?start=false&amp;loop=false&amp;delayms=3000">Slides</a></p>
+
+<p><a href="https://github.com/priya-venkat">github</a></p>
+
+<p><a href="https://linkedin.com/in/priya26">linkedin</a></p>
 
 <p>Customer Service is a huge part of the success equation of any business, and small companies lose out on this game because they do not have the human resources to provide adequate customer service.</p>
 
@@ -58,11 +62,11 @@
 
 <p>First, I had to build a Dictionary of relations and entities that generalizes well to syntactic and lexical variations in the English language. </p>
 
-<p>I started with a set of paraphrased question pairs from Wikianswers. I used Natural Language Processing (CoreNLP) to tokenize and tag each word with a part of speech label. Then, I used string matching and bootstrapped a seed vocabulary to extract equivalent relations and entities. </p>
+<p>I started with a set of paraphrased question pairs from Wikianswers. I used Natural Language Processing (CoreNLP) to tokenize and tag each word with a part of speech label. Then, I used string matching and boostrapped a seed vocabulary to extract equivalent relations and entities. </p>
 
 <p>One thing to note here is that the wikianswers corpus is crowdsourced, so there's a lot of noise which can lead to incorrect relations being learned. To filter out phrases that are less likely to be equivalent, I trained a multilayer perceptron network that assigns higher scores to phrases that are more likely to be equivalent. (like these)</p>
 
-<p>To get a feel for the kind of equivalencies learned by this model, I used the Dialogue learning dataset from Facebook AI Research (FAIR) bAbI project.</p>
+<p>In order to test this model, I used the Dialogue learning dataset from Facebook AI Research (FAIR) bAbI project.</p>
 
 <p>As you can see, the Association model was able to extract the relation and entity phrases and match it against closely related concepts.</p>
 
