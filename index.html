@@ -1,55 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Say What? : Automated Question Answering using Machine Learning">
+    <title>Say What? by priya-venkat</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Say What?</title>
   </head>
-
   <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/priya-venkat/SayWhat">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/priya-venkat/SayWhat/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/priya-venkat/SayWhat/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/priya-venkat/Insight-Project">View on GitHub</a>
+    <div class="wrapper">
 
-          <h1 id="project_title">Say What?</h1>
-          <h2 id="project_tagline">Automated Question Answering using Machine Learning</h2>
+      <section>
+        <div id="title">
+          <h1>Say What?</h1>
+          <p>Automated Question Answering using Machine Learning</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/priya-venkat">priya-venkat</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/priya-venkat/Insight-Project/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/priya-venkat/Insight-Project/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
+        <p><a href="https://docs.google.com/presentation/d/1RnTWS0wZxZXPoIvlczI_Ofs1T3tQjxfbWgfcx6R-9Hs/embed?start=false&amp;loop=false&amp;delayms=3000">Slides</a>         <a href="https://github.com/priya-venkat">github</a>            <a href="https://linkedin.com/in/priya26">linkedin</a></p>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <p>Customer Service is one of the most important components of business success. It also requires enormous human resources and time.</p>
+<p>Customer Service is a huge part of the success equation of any business, and small companies loose out on this game becuse they do not have the human resources to provide adequate customer service.</p>
 
-<p><a href="https://docs.google.com/presentation/d/1RnTWS0wZxZXPoIvlczI_Ofs1T3tQjxfbWgfcx6R-9Hs/embed?start=false&amp;loop=false&amp;delayms=3000">Slides</a></p>
+<p>So, when the company I was consulting for, whom we'll call Z-Star, came to me and said we have a user manual and an FAQ, but nobody ever reads the manual, I decided to help them to automate their customer service.</p>
 
-<p><a href="https://github.com/priya-venkat">github</a></p>
+<p>So what does this system look like?</p>
 
-<p><a href="https://linkedin.com/in/priya26">linkedin</a></p>
+<p>User asks a question, the system looks for the question in the manual, retrieves the answer and gives it to the user. But of course, this would never work because Natural language is complicated and there are dozens of ways of asking the same question.</p>
+
+<p>So, I needed to build a sort of Association Model that can take a customer question, extract relevant phrases and look for equivalent concepts in the repository of answers created from the company's data.</p>
+
+<p>This is a challenging problem, and there's no off-the-shelf solution for this problem. </p>
+
+<p>A quick study of user questions revealed that on an average, questions were composed of a relation phrase, an entity phrase and can be answered with another entity phrase. </p>
+
+<p>I did some research and decided to use the Paraphrase driven learning model to help me with my task. </p>
+
+<p>First, I had to build a Dictionary of relations and entities that generalizes well to syntactic and lexical variations in the English language. </p>
+
+<p>I started with a set of paraphrased question pairs from Wikianswers. I used Natural Language Processing (CoreNLP) to tokenize and tag each word with a part of speech label. Then, I used string matching and boostrapped a seed vocabulary to extract equivalent relations and entities. </p>
+
+<p>One thing to note here is that the wikianswers corpus is crowdsourced, so there's a lot of noise which can lead to incorrect relations being learned. To filter out phrases that are less likely to be equivalent, I trained a multilayer preceptron network that assigns higher scores to phrases that are more likely to be equivalent. (like these)</p>
+
+<p>To get a feel for the kind of equivalencies learned by this model, I used the Dialogue learning dataset from Facebook AI Research (FAIR) bAbi project.</p>
+
+<p>As you can see, the Association model was able to extract the relation and entity phrases and match it against closely related concepts.</p>
+
+<p>So, in conclusion, I was able to use the Association Model to automate customer questions answering at Z-Star, and as compared to exact string matching, my model increased the percentage of questions answered from 10% to 42%.</p>
       </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Say What? maintained by <a href="https://github.com/priya-venkat">priya-venkat</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
     </div>
-
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
     
-
   </body>
 </html>
