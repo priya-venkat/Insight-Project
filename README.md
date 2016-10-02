@@ -1,4 +1,4 @@
-[Slides](<https://docs.google.com/presentation/d/1w8tlsPJ5ISYcu4zeTcWbimKW5Amcif4duLac96DlzPo/embed?start=false&loop=false&delayms=3000)
+[Slides](https://docs.google.com/presentation/d/1w8tlsPJ5ISYcu4zeTcWbimKW5Amcif4duLac96DlzPo/embed?start=false&loop=false&delayms=3000)
 
 [github] (https://github.com/priya-venkat)
 
