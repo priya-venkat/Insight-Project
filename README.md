@@ -5,6 +5,8 @@
 [linkedin] (https://linkedin.com/in/priya26)
 
 
+# Say What - Automated Customer Service System
+
 Customer Service is a huge part of the success equation of any business, and small companies lose out on this game because they do not have the human resources to provide adequate customer service.
 
 So, when the company I was consulting for, whom we'll call Z-Star, came to me and said we have a user manual and an FAQ, but nobody ever reads the manual, I decided to help them to automate their customer service.
